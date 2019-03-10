@@ -59,9 +59,15 @@ public class KhamPhaFragment extends Fragment implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-        String newtxt=s.toString();
-
-
+        String newtxt=s.toString().toLowerCase();
+        List<thanhpho> thanhphos=new ArrayList<>();
+        for(thanhpho tp :thanhphoList) {
+            String name = tp.getmTenthanhpho().toLowerCase();
+            if (name.contains(newtxt)) {
+                thanhphos.add(tp);
+            }
+        }
+        adapter.setfigter(thanhphos);
     }
 
     @Override

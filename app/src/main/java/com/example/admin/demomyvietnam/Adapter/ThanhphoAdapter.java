@@ -19,6 +19,7 @@ import com.example.admin.demomyvietnam.R;
 import com.example.admin.demomyvietnam.database;
 import com.example.admin.demomyvietnam.entity.thanhpho;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ThanhphoAdapter extends RecyclerView.Adapter<ThanhphoAdapter.holder> {
@@ -77,6 +78,12 @@ public class ThanhphoAdapter extends RecyclerView.Adapter<ThanhphoAdapter.holder
     @Override
     public int getItemCount() {
         return thanhphoList.size();
+    }
+
+    public void setfigter(List<thanhpho> thanhphos) {
+        thanhphoList=new ArrayList<>();
+        thanhphoList.addAll(thanhphos);
+        notifyDataSetChanged();
     }
 
     public class holder extends RecyclerView.ViewHolder{
