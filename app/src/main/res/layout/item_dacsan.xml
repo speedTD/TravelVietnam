@@ -12,16 +12,18 @@
     android:layout_height="wrap_content">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_140sdp">
+        android:layout_height="@dimen/_80sdp">
         <ImageView
             android:layout_margin="@dimen/_2sdp"
             android:id="@+id/hinh_mon"
             android:layout_width="@dimen/_160sdp"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/demo" />
+            android:src="@drawable/demo"
+            tools:ignore="MissingConstraints" />
 
         <TextView
+            android:gravity="center_horizontal"
             android:id="@+id/ten_mon"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -38,6 +40,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:gravity="center_horizontal"
             android:textSize="@dimen/_10sdp"
             android:id="@+id/gia_mon"
             android:layout_width="0dp"

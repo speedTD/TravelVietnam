@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:background="@drawable/custom_camnang"
+
+<android.support.v7.widget.CardView
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:background="#f000"
+    android:layout_margin="@dimen/_10sdp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="@dimen/_140sdp"
+    android:layout_height="@dimen/_80sdp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp">
-
             <TextView
-                android:layout_margin="@dimen/_2sdp"
                 android:id="@+id/id_item_camnang_ten"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2sdp"
                 android:text="Những Đồ vật nên mang khi leo núi"
-                android:textColor="#032cff"
-                android:textSize="@dimen/_12sdp"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/_10sdp"
                 app:layout_constraintBottom_toTopOf="@+id/id_item_camnang_demo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
             <TextView
                 android:layout_margin="@dimen/_2sdp"
                 android:maxLines="1"
@@ -33,9 +35,9 @@
                 android:textSize="@dimen/_10sdp"
                 android:id="@+id/id_item_camnang_demo"
                 android:layout_width="0dp"
-                android:layout_height="15dp"
+                android:layout_height="20dp"
                 android:text="những nên mang khi leo núi bao gồm gạch đá và súng ông"
-                android:textColor="#ffffff"
+                android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,4 +46,4 @@
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.v7.widget.CardView>

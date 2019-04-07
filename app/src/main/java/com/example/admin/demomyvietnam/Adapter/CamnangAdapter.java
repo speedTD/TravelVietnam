@@ -2,6 +2,7 @@ package com.example.admin.demomyvietnam.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import com.example.admin.demomyvietnam.R;
 import com.example.admin.demomyvietnam.entity.camnang;
 
 import java.util.List;
+import java.util.Random;
 
 public class CamnangAdapter extends RecyclerView.Adapter<CamnangAdapter.holder> {
     private Context context;
@@ -38,15 +40,25 @@ public class CamnangAdapter extends RecyclerView.Adapter<CamnangAdapter.holder> 
         final camnang cn=camnangList.get(position);
         holder.ten.setText(cn.getTen());
         holder.demo.setText(cn.getNoidung());
+        holder.itemView.setBackgroundColor(getRandomColorCode());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "đang xem "+cn.getTen(), Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context, CamnangActivity.class);
-                intent.putExtra(Constans.TEN_CAMNANG,cn.getId());
+                intent.putExtra(Constans.TEN_CAMNANG,cn.getTen());
+                intent.putExtra(Constans.ND_CAMNANG,cn.getNoidung());
                 context.startActivity(intent);
             }
         });
+    }
+
+    public int getRandomColorCode(){
+
+        Random random = new Random();
+
+        return Color.argb(255, random.nextInt(256), random.nextInt(256),     random.nextInt(256));
+
     }
     @Override
     public int getItemCount() {

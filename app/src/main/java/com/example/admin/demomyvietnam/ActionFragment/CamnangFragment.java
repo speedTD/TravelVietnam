@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,7 +32,7 @@ public class CamnangFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_camnang, container, false);
         recyclerView=view.findViewById(R.id.id_camnang_recyclerview);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         db=new database(getContext());
         camnangList=db.getcamnang();
         adapter=new CamnangAdapter(getContext(),camnangList);

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiadanhActivity" />
-        <activity android:name=".CamnangActivity"></activity>
+        <activity android:name=".CamnangActivity" />
     </application>
 
 </manifest>

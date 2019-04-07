@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         Selectview=(BottomNavigationView) findViewById(R.id.id_bottom_view);
         Selectview.setOnNavigationItemSelectedListener(listener);
         getSupportFragmentManager().beginTransaction().replace(R.id.id_fragment_container,new KhamPhaFragment()).commit();
-
-
     }
     BottomNavigationView.OnNavigationItemSelectedListener listener =new BottomNavigationView.OnNavigationItemSelectedListener() {
         Fragment selectft=null;

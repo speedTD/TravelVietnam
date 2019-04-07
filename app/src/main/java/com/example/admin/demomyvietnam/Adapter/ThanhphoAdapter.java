@@ -2,6 +2,7 @@ package com.example.admin.demomyvietnam.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.admin.demomyvietnam.ActionFragment.FragmentLauchedwait;
 import com.example.admin.demomyvietnam.ActionFragment.ItemByThanhPhoFragment;
 import com.example.admin.demomyvietnam.R;
 import com.example.admin.demomyvietnam.database;
@@ -60,13 +62,13 @@ public class ThanhphoAdapter extends RecyclerView.Adapter<ThanhphoAdapter.holder
                     Toast.makeText(context, "Chưa có thông tin", Toast.LENGTH_SHORT).show();
 
                 }else {
-                android.support.v4.app.Fragment selectft=new ItemByThanhPhoFragment();
-                FragmentTransaction ft=((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
-                Bundle args = new Bundle();
-                args.putInt("idbythanhpho", tp.getId());
-                selectft.setArguments(args);
-                ft.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
-                ft.replace(R.id.id_fragment_container,selectft).commit();
+                    android.support.v4.app.Fragment selectft=new FragmentLauchedwait();
+                    FragmentTransaction ft=((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
+                    Bundle args = new Bundle();
+                    args.putInt("idbythanhpho", tp.getId());
+                    selectft.setArguments(args);
+                    ft.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                    ft.replace(R.id.id_fragment_container,selectft).commit();
                 }
             }
 
